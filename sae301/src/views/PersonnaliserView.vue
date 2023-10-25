@@ -4,6 +4,14 @@ import Lunette_perso from '../components/icons/Lunette_perso.vue';
 
 
 
+let articleQuantite = 1; // Initialisez la quantité à 1 par défaut
+
+// Fonction pour mettre à jour la quantité de l'article
+const updateArticleQuantite = () => {
+  articleQuantite = parseInt(selectedCadran) + parseInt(selectedVerre);
+};
+
+
 // Dans la section <script setup>
 const cadranColors = [
   { name: "Rouge", value: "red" },
@@ -59,13 +67,15 @@ const selectedVerreType = verreTypes[0].value; // Par défaut, sélectionnez le 
 
 
 
+
+
 </script>
 <template>
     <main>
 
         <div class="Banniere">
             <div class="MessageCommande">
-                <div class="textecommande">Nombre de lunettes commandées : </div>
+                <div class="textecommande">Nombre de lunettes commandées : {{ articleQuantite }}</div>
                 
                 <div class="chiffre"> 3
                 </div>
@@ -265,6 +275,7 @@ img {
   color: #C90000;
   text-align: center;
   font-family: 'PT Sans', sans-serif;
+  border-radius: 8px;
 
 }
 
