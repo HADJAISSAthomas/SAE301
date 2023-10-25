@@ -3,7 +3,7 @@ import PocketBase from 'pocketbase'
 var connected = false;
 var pocketbase_ip = "";
 if (import.meta.env.MODE === "production")
-    pocketbase_ip = "http://tavue.thomashadjaissa.fr:8090";
+    pocketbase_ip = "http://tavue.thomashadjaissa.fr";
 else pocketbase_ip = "http://127.0.0.1:8090";
 const pb = new PocketBase(pocketbase_ip);
 var currentUser;
@@ -33,7 +33,7 @@ export default {
                 email: document.getElementById("email").value,
                 password: document.getElementById("passwd").value,
                 passwordConfirm: document.getElementById("passwd").value,
-                name: "JohnDi",
+                name: "John Di",
             });
             if (currentUser) {
                 document.getElementById("status").innerHTML =
