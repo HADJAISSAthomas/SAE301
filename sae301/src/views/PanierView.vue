@@ -2,39 +2,40 @@
 import Lunette_perso from '../components/icons/Lunette_perso.vue';
 
 export default {
-  data() {
-    return {
-      panier: [
-        {
-          photo: 'url_de_l_image1',
-          nom: 'TaVue - de la Fuente',
-          prix: 549.00,
-          quantite: 1,
+    data() {
+        return {
+            panier: [
+                {
+                    photo: 'url_de_l_image1>',
+                    nom: 'TaVue - de la Fuente',
+                    prix: 549.00,
+                    quantite: 1,
+                },
+                // Ajoutez d'autres articles au panier si nécessaire
+            ],
+        };
+    },
+    methods: {
+        augmenterQuantite(article) {
+            article.quantite++;
         },
-        // Ajoutez d'autres articles au panier si nécessaire
-      ],
-    };
-  },
-  methods: {
-    augmenterQuantite(article) {
-      article.quantite++;
+        diminuerQuantite(article) {
+            if (article.quantite > 1) {
+                article.quantite--;
+            }
+        },
+        retirerArticle(index) {
+            this.panier.splice(index, 1);
+        },
+        calculerTotal() {
+            return this.panier.reduce((total, article) => total + article.prix * article.quantite, 0);
+        },
+        passerALaCaisse() {
+            // Rediriger l'utilisateur vers la page de paiement
+            // Vous pouvez ajouter ici la logique de paiement
+        },
     },
-    diminuerQuantite(article) {
-      if (article.quantite > 1) {
-        article.quantite--;
-      }
-    },
-    retirerArticle(index) {
-      this.panier.splice(index, 1);
-    },
-    calculerTotal() {
-      return this.panier.reduce((total, article) => total + article.prix * article.quantite, 0);
-    },
-    passerALaCaisse() {
-      // Rediriger l'utilisateur vers la page de paiement
-      // Vous pouvez ajouter ici la logique de paiement
-    },
-  },
+    components: { Lunette_perso }
 };
 </script>
 <template>
@@ -45,7 +46,9 @@ export default {
     </div>
     <div v-else>
       <div v-for="(article, index) in panier" :key="index" class="cart-item">
-        <img :src="article.photo" alt="Image de l'article">
+        <Lunette_perso/>
+
+
         <div class="infos">
             <div class="NomArticle">{{ article.nom }}</div>
             <p>Prix : {{ article.prix }} €</p>

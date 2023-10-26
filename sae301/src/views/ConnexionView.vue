@@ -78,7 +78,7 @@ export default {
 <div class="card">
 <div style="align-items: center;">
     <div>
-        <h1 class="text-4xl font-bold text-black">Connectez-vous !</h1>
+        <h1 class="text-4xl font-bold text-black">Inscrivez-vous,</h1>
     </div>
     <div class="container">
     <div class="wrapper" id="signOut">

@@ -10,7 +10,7 @@ import { RouterLink } from 'vue-router';
 // Import pocketbase
 import PocketBase from 'pocketbase'
   // Objet pocketBase
-  const pb = new PocketBase("http://127.0.0.1:8090");
+  const pb = new PocketBase("http://127.0.0.1:8090");   
 
   
   // user connecté ? au départ faux
@@ -86,12 +86,12 @@ const loginWithGithub = async () => {
 
 <template>
      <header>
-    <RouterLink to="/" div class="logo">TAVUE</RouterLink>
+    <RouterLink style="text-decoration: none;" to="/" div class="logo">TAVUE</RouterLink>
 
     <div class="Bouton">
-        <RouterLink to="/Personnaliser" button class="nav-btn">Personnaliser</RouterLink>
-        <RouterLink to="/Panier" button class="nav-btn">Mon Panier</RouterLink>
-        <RouterLink to="/Connexion" button class="nav-btn">Connexion</RouterLink>
+        <RouterLink style="text-decoration: none;" to="/Personnaliser" button class="nav-btn">Personnaliser</RouterLink>
+        <RouterLink style="text-decoration: none;" to="/Panier" button class="nav-btn">Mon Panier</RouterLink>
+        <RouterLink style="text-decoration: none;"  to="/Connexion" button class="nav-btn">Incription</RouterLink>
     </div>
     
     <div class="ml-auto">              
@@ -228,6 +228,10 @@ nav {
     display: flex;
     align-items: center; /* Pour centrer le contenu verticalement */
     justify-content: center; /* Pour centrer le contenu horizontalement */
+}
+
+.nav-btn:hover {
+    color: #C90000;
 }
 .panier-btn {
   margin-right: 50px;

@@ -1,5 +1,6 @@
 <script setup>
 import Lunettex2 from '../components/icons/Lunettex2.vue';
+import MapOsm from '../components/MapOsm.vue';
 </script>
 
 <template>
@@ -59,7 +60,11 @@ import Lunettex2 from '../components/icons/Lunettex2.vue';
       <div class="texteicone">L'Élégance à la Française, Vos Yeux en Témoignent</div>
     </div>
 
+    <div class="TitreValeur">Pour Trouver Nos locaux</div>
 
+    <MapOsm/>
+
+    
 
   </main>
 </template>
